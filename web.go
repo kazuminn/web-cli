@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"os"
 	"net/http"
 
 	"github.com/labstack/echo"
@@ -9,6 +11,12 @@ import (
 )
 
 func main() {
+    // help
+	flag.Usage = func() {
+        fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
+        flag.PrintDefaults()
+	}
+
 	//flag 処理
 	defaultPort := ":1323"
 
