@@ -11,6 +11,16 @@ import (
 )
 
 func main() {
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Fprintf(os.Stderr, "Error:\n%s", err)
+				os.Exit(1)
+			}
+		}()
+		os.Exit(_main())
+}
+
+func _main() int {
 		// help
 		flag.Usage = func() {
 			fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
@@ -30,7 +40,10 @@ func main() {
 		e := echo.New()
 		e.GET("/", get)
 		e.Run(standard.New(port))
+
+		return 0
 }
+
 
 func get(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
