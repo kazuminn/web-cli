@@ -4,8 +4,8 @@
 
 # CLIの起動方法
 
-$go build web.go
+$go install web.go
 
-$./web -h
+$web -h
 
 
