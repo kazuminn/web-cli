@@ -1,0 +1,5 @@
+package: web-cli
+import:
+- package: github.com/labstack/echo
+  subpackages:
+  - engine/standard
