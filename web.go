@@ -3,18 +3,18 @@ package main
 import (
 	"flag"
 	"fmt"
-	"os"
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/standard"
 )
 
 func main() {
-    // help
+	// help
 	flag.Usage = func() {
-        fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
-        flag.PrintDefaults()
+		fmt.Fprintf(os.Stderr, "Usage of %s:\n", os.Args[0])
+		flag.PrintDefaults()
 	}
 
 	//flag 処理
